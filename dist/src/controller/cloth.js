@@ -9,7 +9,8 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.deleteCloth = exports.updateCloth = exports.createCloth = exports.getAllClothes = void 0;
+exports.deleteCloth = exports.updateCloth = exports.createCloth = exports.getMatchClothes = exports.getAllClothes = void 0;
+const typeorm_1 = require("typeorm");
 const cloth_1 = require("../entity/cloth");
 function getAllClothes(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
@@ -27,6 +28,30 @@ function getAllClothes(req, res, next) {
     });
 }
 exports.getAllClothes = getAllClothes;
+function getMatchClothes(req, res, next) {
+    return __awaiter(this, void 0, void 0, function* () {
+        const { top_bottom, short_long, color, material } = req.body;
+        try {
+            const selectedClothes = yield cloth_1.Cloth.find({
+                where: {
+                    top_bottom: top_bottom ? top_bottom : (0, typeorm_1.Not)('null'),
+                    short_long: short_long ? short_long : (0, typeorm_1.Not)('null'),
+                    color: color ? color : (0, typeorm_1.Not)('null'),
+                    material: material ? material : (0, typeorm_1.Not)('null'),
+                },
+                order: {
+                    id: 'ASC',
+                },
+            });
+            res.status(200).json({ code: 200, data: selectedClothes });
+        }
+        catch (error) {
+            console.error(error);
+            next(error);
+        }
+    });
+}
+exports.getMatchClothes = getMatchClothes;
 function createCloth(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const { top_bottom, short_long, color, material } = req.body;

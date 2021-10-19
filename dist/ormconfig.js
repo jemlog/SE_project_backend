@@ -10,7 +10,7 @@ module.exports = [
         username: 'postgres',
         password: '4321',
         database: 'typeorm_project_schema',
-        synchronize: true,
+        synchronize: false,
         logging: true,
         entities: ['dist/src/entity/*.js'],
         migrations: ['src/migrations/**/*.ts'],

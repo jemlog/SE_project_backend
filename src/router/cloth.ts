@@ -9,6 +9,9 @@ router.get('/', clothController.getAllClothes);
 // 옷 하나 추가하기
 router.post('/', clothController.createCloth);
 
+// 조건에 맞은 옷 검색하기
+router.post('/search', clothController.getMatchClothes);
+
 // 옷 정보 수정하기
 router.put('/:id', clothController.updateCloth);
 
