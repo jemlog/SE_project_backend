@@ -16,7 +16,7 @@ deploy: # 배포
     bucket: seproject # S3에 생성한 버킷
     region: ap-northeast-2
     skip_cleanup: true
-    local_dir: deploy # deploy 디렉터리에 있는 파일을 s3로 업로드 하겠다는 의미
+    local_dir: deploy # deploy 디렉터리에 있는 파일을 s3로 업로드 하겠다는
     wait-until-deployed: true
     on:
       repo: jemlog/SE_project_backend #Github
