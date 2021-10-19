@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "lib": ["es5", "es6"],
+    "lib": ["es5", "es6"], // typeORM을 사용하려면 lib에 es6가 적용되어야함
     "target": "es6",
     "module": "CommonJS",
     "moduleResolution": "node",

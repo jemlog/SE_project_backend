@@ -13,12 +13,13 @@ module.exports = [
     synchronize: false,
     logging: true,
     entities: ['dist/src/entity/*.js'],
-    migrations: ['src/migrations/**/*.ts'],
-    subscribers: ['src/subscriber/**/*.ts'],
+    migrationsTableName: 'se_migration_table',
+    migrations: ['src/migration/*.ts'],
+    subscribers: ['dist/src/subscriber/*.js'],
     cli: {
-      entitiesDir: 'src/entity',
-      migrationsDir: 'src/migrations',
-      subscribersDir: 'src/subscriber',
+      entitiesDir: 'dist/src/entity', // entity는 .js 그대로 사용해야 하고 migration은 .ts에서도 사용 가능 !
+      migrationsDir: 'src/migration',
+      subscribersDir: 'dist/src/subscriber',
     },
   },
   {
@@ -31,12 +32,13 @@ module.exports = [
     synchronize: true,
     logging: true,
     entities: ['dist/src/entity/*.js'],
-    migrations: ['src/migrations/**/*.ts'],
-    subscribers: ['src/subscriber/**/*.ts'],
+    migrationsTableName: 'se_migration_table',
+    migrations: ['src/migration/*.ts'],
+    subscribers: ['dist/src/subscriber/*.js'],
     cli: {
-      entitiesDir: 'src/entity',
-      migrationsDir: 'src/migrations',
-      subscribersDir: 'src/subscriber',
+      entitiesDir: 'dist/src/entity',
+      migrationsDir: 'src/migration',
+      subscribersDir: 'dist/src/subscriber',
     },
   },
 ];

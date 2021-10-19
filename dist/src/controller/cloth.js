@@ -12,6 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.deleteCloth = exports.updateCloth = exports.createCloth = exports.getMatchClothes = exports.getAllClothes = void 0;
 const typeorm_1 = require("typeorm");
 const cloth_1 = require("../entity/cloth");
+// 모든 옷 다 가져오기
 function getAllClothes(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
@@ -28,6 +29,7 @@ function getAllClothes(req, res, next) {
     });
 }
 exports.getAllClothes = getAllClothes;
+// 필터링 조건에 맞는 옷만 가지고 오기
 function getMatchClothes(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const { top_bottom, short_long, color, material } = req.body;
@@ -52,12 +54,13 @@ function getMatchClothes(req, res, next) {
     });
 }
 exports.getMatchClothes = getMatchClothes;
+// 새 옷 집어넣기
 function createCloth(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const { top_bottom, short_long, color, material } = req.body;
         try {
             const cloth = cloth_1.Cloth.create({ top_bottom, short_long, color, material });
-            const savedCloth = yield cloth_1.Cloth.save(cloth);
+            const savedCloth = yield cloth.save();
             res.status(201).json({ code: 201, data: savedCloth });
         }
         catch (error) {
@@ -67,11 +70,12 @@ function createCloth(req, res, next) {
     });
 }
 exports.createCloth = createCloth;
+// 옷 정보 업데이트하기
 function updateCloth(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const { id } = req.params;
         try {
-            const user = yield cloth_1.Cloth.findOne({ where: { id } });
+            const user = yield cloth_1.Cloth.findOne(id);
             const changedUser = yield cloth_1.Cloth.update(id, req.body);
             res.status(200).json({ code: 200, message: changedUser });
         }
@@ -82,12 +86,13 @@ function updateCloth(req, res, next) {
     });
 }
 exports.updateCloth = updateCloth;
+// 옷 삭제하기
 function deleteCloth(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         const { id } = req.params;
         try {
-            const user = yield cloth_1.Cloth.find({ where: { id } });
-            const deleteUser = yield cloth_1.Cloth.remove(user);
+            const user = yield cloth_1.Cloth.findOne(id);
+            const deleteUser = yield (user === null || user === void 0 ? void 0 : user.remove());
             res.status(204).json({ code: 204, message: deleteUser });
         }
         catch (error) {
