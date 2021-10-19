@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "lib": ["es5", "es6"],
+    "target": "es6",
+    "module": "CommonJS",
+    "moduleResolution": "node",
+    "outDir": "dist",
+    "strict": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "esModuleInterop": true, // import 관련 오류들 해결
+    "skipLibCheck": true, // .d.ts 파일들 확인 안해도 됨, 오류를 많이 줄여준다
+    "strictPropertyInitialization": false, // 이걸 false로 설정해놔야 entity에서 컬럼마다 ! 안 붙여줘도 된다.
+    "allowJs": true, // ormconfig.js파일 포함시키기 위함
+    "forceConsistentCasingInFileNames": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "name": "typeorm_project",
+  "version": "0.0.1",
+  "description": "Awesome project developed with TypeORM.",
+  "main": "dist/src/app.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/concurrently": "^6.3.0",
+    "@types/cors": "^2.8.12",
+    "@types/dotenv": "^8.2.0",
+    "@types/express": "^4.17.13",
+    "@types/hpp": "^0.2.2",
+    "@types/morgan": "^1.9.3",
+    "@types/node": "^8.0.29",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-prettier": "^4.0.0",
+    "nodemon": "^2.0.13",
+    "pm2": "^5.1.2",
+    "prettier": "2.4.1",
+    "ts-node": "3.3.0",
+    "typeorm": "^0.2.38",
+    "typescript": "^4.4.4"
+  },
+  "dependencies": {
+    "concurrently": "^6.3.0",
+    "cors": "^2.8.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "helmet": "^4.6.0",
+    "hpp": "^0.2.3",
+    "morgan": "^1.10.0",
+    "mysql2": "^2.3.2",
+    "pg": "^8.7.1",
+    "reflect-metadata": "^0.1.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"tsc -w\" \"nodemon dist/src/app.js\"",
+    "start": "cross-env NODE_ENV=production pm2 start dist/src/app.js"
+  }
+}
