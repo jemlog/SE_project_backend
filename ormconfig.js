@@ -33,7 +33,7 @@ module.exports = [
     logging: true,
     entities: ['dist/src/entity/*.js'],
     migrationsTableName: 'se_migration_table',
-    migrations: ['src/migration/*.ts'],
+    migrations: ['dist/src/migration/*.js'],
     subscribers: ['dist/src/subscriber/*.js'],
     cli: {
       entitiesDir: 'dist/src/entity',

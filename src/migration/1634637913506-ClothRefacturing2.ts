@@ -1,17 +1,15 @@
 import { MigrationInterface, QueryRunner } from 'typeorm';
 
-export class ClothRefactoring1634633988392 implements MigrationInterface {
+export class ClothRefacturing21634637913506 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
-      `ALTER TABLE "cloth" RENAME COLUMN "color" TO "rainbow"`,
+      `ALTER TABLE "cloth" RENAME COLUMN "color" TO "beautiful"`,
     );
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.query(
-      `ALTER TABLE "cloth" RENAME COLUMN "rainbow" TO "color"`,
+      `ALTER TABLE "cloth" RENAME COLUMN "beautiful" TO "color"`,
     );
   }
 }
-
-// ts-node ./node_modules/typeorm/cli.js migration:run
