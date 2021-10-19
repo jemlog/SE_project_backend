@@ -8,3 +8,5 @@
 - NGINX
 - AWS RDS
 - AWS EC2
+- travis CI
+- AWS CodeDeploy
