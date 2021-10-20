@@ -10,13 +10,12 @@ export async function getAllClothes(
 ) {
   try {
     const cloth = await Cloth.find({});
-    res.status(200).json({
+    return res.status(200).json({
       code: 200,
       data: cloth,
     });
   } catch (error) {
     console.error(error);
-    next(error);
   }
 }
 

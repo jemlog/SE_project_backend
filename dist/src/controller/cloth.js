@@ -17,14 +17,13 @@ function getAllClothes(req, res, next) {
     return __awaiter(this, void 0, void 0, function* () {
         try {
             const cloth = yield cloth_1.Cloth.find({});
-            res.status(200).json({
+            return res.status(200).json({
                 code: 200,
                 data: cloth,
             });
         }
         catch (error) {
             console.error(error);
-            next(error);
         }
     });
 }
