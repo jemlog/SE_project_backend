@@ -9,16 +9,18 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ClothRefacturing1634637281660 = void 0;
-class ClothRefacturing1634637281660 {
+exports.ClothRefacturing21634637913506 = void 0;
+class ClothRefacturing21634637913506 {
     up(queryRunner) {
         return __awaiter(this, void 0, void 0, function* () {
+            yield queryRunner.query(`ALTER TABLE "cloth" RENAME COLUMN "color" TO "beautiful"`);
         });
     }
     down(queryRunner) {
         return __awaiter(this, void 0, void 0, function* () {
+            yield queryRunner.query(`ALTER TABLE "cloth" RENAME COLUMN "beautiful" TO "color"`);
         });
     }
 }
-exports.ClothRefacturing1634637281660 = ClothRefacturing1634637281660;
-//# sourceMappingURL=1634637281660-ClothRefacturing.js.map
+exports.ClothRefacturing21634637913506 = ClothRefacturing21634637913506;
+//# sourceMappingURL=1634637913506-ClothRefacturing2.js.map
