@@ -28,7 +28,7 @@ app.use(cors());
 
 app.use('/', userRouter);
 app.get('/jemin', (req, res) => {
-  res.json({ message: 'success' });
+  res.json({ message: 'success123' });
 });
 // 옷장에 들어가는 옷 관련 라우터
 app.use('/cloth', clothRouter);

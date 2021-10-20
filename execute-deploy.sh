@@ -1,4 +1,3 @@
 #!/bin/bash
 
-cd /home/ubuntu/deploy/se_project
-npx pm2 kill
+cd /home/ubuntu/deploy/se_project/deploy.sh
