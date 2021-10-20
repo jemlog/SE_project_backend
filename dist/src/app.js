@@ -19,7 +19,7 @@ const app = (0, express_1.default)();
 app.use(express_1.default.json());
 app.use(express_1.default.urlencoded({ extended: false }));
 app.use(express_1.default.static(path_1.default.join(__dirname, 'public')));
-app.set('port', process.env.PORT || 3007);
+app.set('port', process.env.PORT || 3005);
 if (process.env.NODE_ENV === 'production') {
     app.use((0, morgan_1.default)('combined'));
     app.use((0, helmet_1.default)({ contentSecurityPolicy: false }));
