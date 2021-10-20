@@ -2,7 +2,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ubuntu/deploy/se_project/ # S3에서 가지고온 파일을 저장할 디렉터리 지정
+    destination: /home/ubuntu/deploy/se_project/ # S3에서 가지고온 파일을 저장할 디렉터리
 hooks:
   AfterInstall:
     - location: execute-deploy.sh
