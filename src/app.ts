@@ -48,6 +48,6 @@ const errorHandler: ErrorRequestHandler = (err, req, res, next) => {
 
 app.use(errorHandler);
 
-app.listen(app.get('port'), '0.0.0.0', () => {
+app.listen(app.get('port'), () => {
   console.log(`server start at port ${app.get('port')}`);
 });
