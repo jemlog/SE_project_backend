@@ -6,7 +6,7 @@
 - Typescript
 - Express
 - NGINX
-- travis CI
+- Travis CI
 - AWS CodeDeploy
 - AWS S3
 - AWS RDS
