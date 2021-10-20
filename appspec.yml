@@ -5,5 +5,5 @@ files:
     destination: /home/ubuntu/deploy/se_project/ # S3에서 가지고온 파일을 저장할 디렉터리 지정
 hooks:
   AfterInstall:
-    - location: deploy.sh
+    - location: execute-deploy.sh
       timeout: 200
