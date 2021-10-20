@@ -27,7 +27,9 @@ app.use(cors());
 // =================== router ====================
 
 app.use('/', userRouter);
-
+app.get('/hello', (req, res) => {
+  res.json({ message: 'hello!' });
+});
 // 옷장에 들어가는 옷 관련 라우터
 app.use('/cloth', clothRouter);
 
