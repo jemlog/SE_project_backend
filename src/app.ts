@@ -14,7 +14,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-app.set('port', process.env.PORT || 3007);
+app.set('port', process.env.PORT || 3005);
 if (process.env.NODE_ENV === 'production') {
   app.use(morgan('combined'));
   app.use(helmet({ contentSecurityPolicy: false }));
