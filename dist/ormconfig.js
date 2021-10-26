@@ -4,12 +4,12 @@ dotenv.config();
 module.exports = [
     {
         name: 'default',
-        type: 'postgres',
+        type: 'mysql',
         host: 'localhost',
-        port: 5432,
-        username: 'postgres',
-        password: '4321',
-        database: 'typeorm_project_schema',
+        port: 3306,
+        username: 'root',
+        password: '71312m**0312',
+        database: 'test_schema',
         synchronize: false,
         logging: true,
         entities: ['dist/src/entity/*.js'],
